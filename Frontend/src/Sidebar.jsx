@@ -4,18 +4,18 @@ function Sidebar(){
         <section className="sidebar">
             {/*New chat  */}
             <button>
-                <img src="src/assets/logo.png" alt="GPT logo"></img>
-                <i className="fa-solid fa-pen-to-square"></i>
+                <img src="src/assets/logo.png" alt="GPT logo" className="logo"></img>
+                <spna><i className="fa-solid fa-pen-to-square"></i></spna>
         </button>
             {/* Chat Histroy */}
             <ul className="histroy">
-                <li>histroy1</li>
-                <li>histroy2</li>
-                <li>histroy3</li>
+                <li>Thread1</li>
+                <li>Thread2</li>
+                <li>Thread3</li>
             </ul>
             {/* sign*/}
             <div className="Sign">
-                <p>By Official RAG System</p>
+                <p>By Offiline RAG System</p>
             </div>
         </section>
 
