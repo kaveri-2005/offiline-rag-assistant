@@ -36,7 +36,7 @@ const port = 8080;
 
 app.use(express.json());
 app.use(cors());
-app.use("/api", chatRoutes);
+app.use("/api/v1", chatRoutes);
 
 const connectDB = async () => {
     try {
