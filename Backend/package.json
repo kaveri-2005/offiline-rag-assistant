@@ -8,11 +8,17 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@langchain/community": "^1.1.15",
+    "@langchain/core": "^1.1.24",
+    "@langchain/ollama": "^1.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "langchain": "^1.2.24",
     "mongoose": "^9.1.5",
-    "ollama": "^0.6.3"
+    "multer": "^2.0.2",
+    "ollama": "^0.6.3",
+    "pdf-parse": "^2.4.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

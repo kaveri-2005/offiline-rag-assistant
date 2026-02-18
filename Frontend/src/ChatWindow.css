@@ -39,11 +39,26 @@
 .inputBox {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: center; /* Perfect vertical alignment for all icons and input */
     background-color: #2f2f2f;
     border-radius: 15px;
     padding: 10px 20px;
     position: relative;
+    gap: 10px; /* Adds space between upload icon, input, and send button */
+}
+
+/* Phase 2: Upload Button Styling */
+.upload-btn {
+    cursor: pointer;
+    color: #b4b4b4;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.upload-btn:hover {
+    color: #0b93f6; /* Highlight blue on hover to match send button */
 }
 
 .inputBox input {
@@ -61,6 +76,8 @@
     padding: 5px;
     color: #0b93f6;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
 }
 
 .footer-info {
@@ -77,4 +94,31 @@
     border-radius: 8px;
     padding: 10px;
     z-index: 10;
+}
+
+/* Loader styling for file processing */
+.loader {
+    margin-bottom: 10px;
+}
+.voice-btn {
+    transition: all 0.3s ease;
+}
+
+.voice-btn.pulsing {
+    animation: pulse-red 1.5s infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6));
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.chat-image-preview {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: block;
 }

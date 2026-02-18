@@ -31,7 +31,12 @@ function Sidebar() {
     setCurrThreadId(uuidv1());
     setPrevChats([]);
   }
-
+const loadExistingChat = async (id) => {
+    const response = await fetch(`http://localhost:8080/api/v1/thread/${id}`);
+    const data = await response.json();
+    setPrevChats(data.messages); // THIS LINE redirects the history to the screen
+    setNewChat(false); 
+};
  const changeThread = async (newThreadId) => {
     setCurrThreadId(newThreadId);
     try {
