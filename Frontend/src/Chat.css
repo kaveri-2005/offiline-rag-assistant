@@ -1,7 +1,9 @@
 .chats {
-    flex: 1; /* Takes up all vertical space in ChatWindow */
+    flex: 1;
+    /* Takes up all vertical space in ChatWindow */
     width: 100%;
-    max-width: 850px; /* Limits width for a clean look */
+    max-width: 850px;
+    /* Limits width for a clean look */
     overflow-y: auto;
     padding: 20px;
     display: flex;
@@ -18,7 +20,8 @@
 
 .userDiv {
     display: flex;
-    justify-content: flex-end; /* Align user to right */
+    justify-content: flex-end;
+    /* Align user to right */
     width: 100%;
 }
 
@@ -33,7 +36,8 @@
 
 .gptDiv {
     display: flex;
-    justify-content: flex-start; /* Align AI to left */
+    justify-content: flex-start;
+    /* Align AI to left */
     width: 100%;
 }
 
@@ -47,6 +51,7 @@
 .chats::-webkit-scrollbar {
     width: 6px;
 }
+
 .chats::-webkit-scrollbar-thumb {
     background-color: #333;
     border-radius: 10px;

@@ -1,5 +1,6 @@
 .chatWindow {
-    flex: 1; /* Stretch to fill space next to sidebar */
+    flex: 1;
+    /* Stretch to fill space next to sidebar */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +11,45 @@
 
 .navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    padding: 12px 20px;
+    background-color: #212121;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar-toggle {
+    background: transparent;
+    border: none;
+    color: #b4b4b4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.sidebar-toggle:hover {
+    color: #fff;
+}
+
+.nav-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ececec;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    text-align: center;
 }
 
 .userIcon {
@@ -39,12 +75,14 @@
 .inputBox {
     width: 100%;
     display: flex;
-    align-items: center; /* Perfect vertical alignment for all icons and input */
+    align-items: center;
+    /* Perfect vertical alignment for all icons and input */
     background-color: #2f2f2f;
     border-radius: 15px;
     padding: 10px 20px;
     position: relative;
-    gap: 10px; /* Adds space between upload icon, input, and send button */
+    gap: 10px;
+    /* Adds space between upload icon, input, and send button */
 }
 
 /* Phase 2: Upload Button Styling */
@@ -58,7 +96,8 @@
 }
 
 .upload-btn:hover {
-    color: #0b93f6; /* Highlight blue on hover to match send button */
+    color: #0b93f6;
+    /* Highlight blue on hover to match send button */
 }
 
 .inputBox input {
@@ -100,6 +139,7 @@
 .loader {
     margin-bottom: 10px;
 }
+
 .voice-btn {
     transition: all 0.3s ease;
 }
@@ -110,9 +150,20 @@
 }
 
 @keyframes pulse-red {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .chat-image-preview {
@@ -121,4 +172,83 @@
     border-radius: 8px;
     margin-bottom: 8px;
     display: block;
+}
+
+/* FILE PREVIEW IN INPUT AREA */
+.file-preview-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.file-preview-container {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 8px 12px;
+    border-radius: 10px;
+    gap: 10px;
+    position: relative;
+    width: fit-content;
+    border: 1px solid #444;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    background: #2f2f2f;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip:hover {
+    background: #0b93f6;
+    color: white;
+    border-color: #0b93f6;
+}
+
+.image-preview-thumbnail {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.pdf-preview-icon {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remove-file-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1;
+}
+
+.remove-file-btn:hover {
+    background: #c0392b;
 }

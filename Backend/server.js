@@ -1,56 +1,37 @@
-// import express from "express";
-// import "dotenv/config";
-// import cors from "cors";
-// import getRAGResponse from "./utils/RAG.js";
-// import mongoose from 'mongoose';
-// import chatRoutes from './routes/chat.js';
 
-// const app=express();
-// const port=8080;
-
-// app.use(express.json());
-// app.use(cors());
-// app.use("/api",chatRoutes);
-// app.listen(port,()=>{
-//     console.log(`server is running on ${port}`);
-//     connectDB();
-// })
-
-// const connectDB=async()=>{
-//     try{
-//         await mongoose.connect(process.env.MONGODB_URI);
-//         console.log("connected with database");
-//     }
-//     catch(err){
-//         console.log(err);
-//     }
-// }
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
-import mongoose from 'mongoose';
 import chatRoutes from './routes/chat.js';
+import fs from 'fs';
+import path from 'path';
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
 app.use("/api/v1", chatRoutes);
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_URI);
-        console.log(" Connected with database");
-        
-        // Start server ONLY after DB is connected
-        app.listen(port, () => {
-            console.log(` Server is running on port ${port}`);
-        });
-    } catch (err) {
-        console.error(" DB Connection Failed:", err.message);
-        process.exit(1);
-    }
-};
+// Ensure uploads directory exists
+const uploadsDir = path.join(process.cwd(), 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir);
+}
 
-connectDB();
+// Start server with graceful error handling
+const server = app.listen(port, () => {
+    console.log(` Server is running on port ${port} (Offline Mode)`);
+});
+
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`\n❌ Port ${port} is already in use!`);
+        console.error(`   Run this command to fix it:\n`);
+        console.error(`   npx kill-port ${port}\n`);
+        console.error(`   Then restart with: node server.js\n`);
+        process.exit(1);
+    } else {
+        throw err;
+    }
+});

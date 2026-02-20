@@ -11,16 +11,16 @@
     "@langchain/community": "^1.1.15",
     "@langchain/core": "^1.1.24",
     "@langchain/ollama": "^1.2.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
     "langchain": "^1.2.24",
-    "mongoose": "^9.1.5",
+    "mongoose": "^9.2.1",
     "multer": "^2.0.2",
     "ollama": "^0.6.3",
     "pdf-parse": "^2.4.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.13"
   }
 }

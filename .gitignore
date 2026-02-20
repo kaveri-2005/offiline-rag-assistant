@@ -1,1 +1,25 @@
-.env node_modules
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables (keep secret!)
+.env
+Backend/.env
+
+# Uploads (temp files)
+Backend/uploads/
+
+# Build output
+Frontend/dist/
+Frontend/.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Database (local offline data)
+Backend/data/db.json

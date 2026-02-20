@@ -12,14 +12,18 @@ function App() {
   const [prevChats, setPrevChats] = useState([]);
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const providerValues = {
     prompt, setPrompt,
     reply, setReply,
-    currThreadId, setCurrThreadId, // Added setter
+    currThreadId, setCurrThreadId,
     prevChats, setPrevChats,
     newChat, setNewChat,
-    allThreads, setAllThreads
+    allThreads, setAllThreads,
+    refreshTrigger, setRefreshTrigger,
+    isSidebarOpen, setIsSidebarOpen
   };
 
   return (
