@@ -75,6 +75,28 @@
     padding: 10px;
 }
 
+/* Custom Scrollbar for History */
+.history::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.history:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.history::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
 .history li {
     list-style-type: none;
     cursor: pointer;

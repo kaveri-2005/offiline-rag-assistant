@@ -83,6 +83,7 @@ function ChatWindow() {
         if (!SpeechRecognition) return alert("Browser does not support Speech Recognition");
 
         const recognition = new SpeechRecognition();
+        // Can be later combined with logic for 'auto' or strictly Hindi 'hi-IN' etc.
         recognition.onstart = () => setIsListening(true);
         recognition.onend = () => setIsListening(false);
         recognition.onresult = (e) => setPrompt(e.results[0][0].transcript);
@@ -206,7 +207,7 @@ function ChatWindow() {
                         <i className="fa-solid fa-paper-plane"></i>
                     </div>
                 </div>
-                <p className="footer-info">OfflineGPT can make mistakes. Built for B.Tech Project 2026.</p>
+                <p className="footer-info">OfflineGPT supports English. Built for B.Tech Project 2026.</p>
             </div>
         </div>
     );

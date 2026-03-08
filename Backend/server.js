@@ -1,5 +1,5 @@
-
 import express from "express";
+process.env.UNDICI_HEADERS_TIMEOUT = "0"; // Increase timeout for local AI processing
 import "dotenv/config";
 import cors from "cors";
 import chatRoutes from './routes/chat.js';
@@ -23,6 +23,11 @@ if (!fs.existsSync(uploadsDir)) {
 const server = app.listen(port, () => {
     console.log(` Server is running on port ${port} (Offline Mode)`);
 });
+
+// Support long-running local AI requests
+server.timeout = 0; 
+server.keepAliveTimeout = 0;
+server.headersTimeout = 0;
 
 server.on('error', (err) => {
     if (err.code === 'EADDRINUSE') {

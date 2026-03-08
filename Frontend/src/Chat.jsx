@@ -17,7 +17,9 @@ function Chat() {
 
         if (!prevChats?.length) return;
 
-        const content = reply.split(" "); // Split by words for natural typing
+        // Clean up trailing dashes/separators the AI sometimes adds
+        const cleaned = reply.replace(/\s*---+\s*$/g, "").trim();
+        const content = cleaned.split(" "); // Split by words for natural typing
         let idx = 0;
         const interval = setInterval(() => {
             setLatestReply(content.slice(0, idx + 1).join(" "));

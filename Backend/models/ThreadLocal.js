@@ -5,6 +5,7 @@ class ThreadLocal {
         this.threadId = data.threadId;
         this.title = data.title || "New chat";
         this.messages = data.messages || [];
+        this.documentContext = data.documentContext || ""; // New field for RAG
         this.createdAt = data.createdAt || new Date();
         this.updatedAt = data.updatedAt || new Date();
     }

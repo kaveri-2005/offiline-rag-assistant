@@ -4,10 +4,13 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "dev": "npm run start-all",
+    "start-all": "concurrently \"cd Backend && npm run dev\" \"cd Frontend && npm run dev\"",
+    "install-all": "npm install && cd Backend && npm install && cd ../Frontend && npm install"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",

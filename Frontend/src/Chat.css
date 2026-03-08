@@ -47,6 +47,37 @@
     color: #d1d1d1;
 }
 
+/* Hide horizontal rules (dashes) that AI sometimes generates */
+.gptMessage hr {
+    display: none;
+}
+
+/* Copy button - hidden until hover, no browser default box */
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-top: 6px;
+    opacity: 0;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.gptDiv:hover .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    color: #0b93f6;
+    background: rgba(255, 255, 255, 0.05);
+}
+
 /* Scrollbar styling for a modern look */
 .chats::-webkit-scrollbar {
     width: 6px;

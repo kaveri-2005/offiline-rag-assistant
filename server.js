@@ -1,5 +1,6 @@
 
 import express from "express";
+process.env.UNDICI_HEADERS_TIMEOUT = "0"; // Disable timeout for local AI processing
 import "dotenv/config";
 import cors from "cors";
 import mongoose from 'mongoose';
